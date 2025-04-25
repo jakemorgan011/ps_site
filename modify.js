@@ -1,6 +1,8 @@
 // heres the deal:
 // we can either make a bunch of different scripts the lazy way and have this avaible for every div
 // OR you can do it right and make it dynamic.
+const window_height = window.screen.height;
+const window_width = window.screen.width;
 
 class SizeAnimator {
     constructor(containerSelector, options = {}) {
@@ -76,15 +78,18 @@ class SizeAnimator {
     }
 }
 
+//
+const MAX_HEIGHT = window_height / 4;
+const MAX_WIDTH = window_width / 5;
 
 // independent objects inside the flexbox
 document.addEventListener('DOMContentLoaded', () => {
     // Create animator instance
     const animator = new SizeAnimator('.links', {
         minWidth: 65,
-        maxWidth: 200,
+        maxWidth: MAX_WIDTH,
         minHeight: 60,
-        maxHeight: 200,
+        maxHeight: MAX_HEIGHT,
         step: 10,
         interval: 75, // Update every 500ms
         pxRate:0.03
@@ -95,10 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   // grab the element id via #
     const animator2 = new SizeAnimator('#test',{
-        minWidth: 65,
-        maxWidth: 200,
-        minHeight: 60,
-        maxHeight: 200,
+        minWidth: 65, // default 65
+        maxWidth: MAX_WIDTH, //default 200
+        minHeight: 60, // default 60
+        maxHeight: MAX_HEIGHT, // default 200
         step: 10,
         interval: 75,
         pxRate: 0.02

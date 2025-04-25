@@ -58,6 +58,14 @@ h2 {
   }
 }
 
+/* for mobile */
+@media (max-width: 450px){
+    .wrapper {
+        display: flex;
+    }
+}
+
+
 
 /* for fullsize */
 @media (min-width: 1024px){
