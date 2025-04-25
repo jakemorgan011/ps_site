@@ -42,6 +42,10 @@ h2 {
 /* makes it the top left style */
 /* on mobile however something goes wrong with all the sizing. */
 @media (max-width: 1023px){
+    .breaker{
+        height: 0;
+        width: 100%;
+    }
   .wrapper{
     display: flex;
   }
@@ -57,18 +61,22 @@ h2 {
 
 /* for fullsize */
 @media (min-width: 1024px){
+    .breaker{
+        height: 25vh;
+        width: 100%;
+    }
   .ultwrapper{
+    align-items: center;
     width: 100%;
-    max-width: 120px;
+    max-width: 25%;
     margin: 0 auto;
     padding: 0 20px;
-    box-sizing: border-box;
   }
   .wrapper{
-    align-content: center;
     width: 100%;
     height: 100%;
     margin: 0 auto;
+    display: flex;
   }
   .links{
     *{
