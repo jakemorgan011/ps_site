@@ -69,14 +69,22 @@ h2 {
 
 /* for fullsize */
 @media (min-width: 1024px){
+    h1{
+        font-size: xxx-large;
+    }
+    .jake{
+        h2{
+            font-size: xx-large;
+        }
+    }
     .breaker{
-        height: 25vh;
+        height: 15vh;
         width: 100%;
     }
   .ultwrapper{
     align-items: center;
     width: 100%;
-    max-width: 25%;
+    max-width: 45%;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -95,7 +103,7 @@ h2 {
     background-color: black;
     color: white;
     align-content: center;
-    margin: auto;
+    margin: 5px;
     border-radius: 5%;
     width: 100vw;
     height: 100vh;

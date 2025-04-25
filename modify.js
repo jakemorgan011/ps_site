@@ -99,8 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // grab the element id via #
-    const animator2 = new SizeAnimator('#test',{
-        minWidth: 65, // default 65
+    const animator2 = new SizeAnimator('#project_directory',{
+        minWidth: 145, // default 145 for "project_directory"
         maxWidth: MAX_WIDTH, //default 200
         minHeight: 60, // default 60
         maxHeight: MAX_HEIGHT, // default 200
