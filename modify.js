@@ -72,9 +72,27 @@ class SizeAnimator {
         // pixel rate is return NaN;
         this.currentSize.width = this.currentSize.width + (this.newSize.width - this.currentSize.width)*this.settings.pxRate;   
         this.currentSize.height = this.currentSize.height + (this.newSize.height - this.currentSize.height)*this.settings.pxRate;   
-        console.log(this.settings.pxRate,' rate');
         // at the end.
         this.settings.pxRate += this.mantissa;
+    }
+}
+
+class colorWheel {
+    constructor(containerSelector, options = {}) {
+        this.container = document.querySelector(containerSelector);
+        this.starting_color = [0,0,0,1] //rgba; alpha is 0.0 - 1.0
+        this.r = 0;
+        this.g = 0;
+        this.b = 0;
+        const a = 1;
+        this.settings = {
+            interval: 75,
+            step: 5,
+            ...options
+        }
+    }
+    get_new_color(){
+
     }
 }
 
@@ -110,3 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   animator2.start();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const animator3 = new SizeAnimator('#gumroad',{
+        minWidth: 200,
+        maxWidth: MAX_WIDTH,
+        minHeight: 100,
+        maxHeight: MAX_HEIGHT,
+        step: 10,
+        interval: 80,
+        pxRate: 0.05,
+    })
+    animator3.start();
+})

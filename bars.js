@@ -30,7 +30,6 @@ class PipeAnimator {
   animatePipe(){
     const currentStr = this.p.textContent; 
     const currentLength = currentStr.length;
-    console.log(currentLength, "length");
     if(this.vel == 1){
       this.text = currentStr;
       this.text += '|';
