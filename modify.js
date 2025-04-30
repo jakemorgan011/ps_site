@@ -141,3 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     animator3.start();
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    const animator3 = new SizeAnimator('#contact',{
+        minWidth: 125,
+        maxWidth: MAX_WIDTH,
+        minHeight: 75,
+        maxHeight: MAX_HEIGHT,
+        step: 10,
+        interval: 100,
+        pxRate: 0.08,
+    })
+    console.log("working")
+    animator3.start();
+})

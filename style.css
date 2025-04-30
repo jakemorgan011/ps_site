@@ -46,6 +46,14 @@ h2 {
     height: 30vh;
     text-align: center;
 }
+.short_description{
+    border: 5px solid white;
+    border-radius: 2%;
+    background-color: rgba(50,50,55,0.22);
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
 
 .back{
     *{
@@ -70,6 +78,9 @@ h2 {
     }
   .wrapper{
     display: flex;
+  }
+  .short-description{
+      width: 200px;
   }
 }
 
@@ -100,7 +111,7 @@ h2 {
         }
     }
     .breaker{
-        height: 15vh;
+        height: 7vh;
         width: 100%;
     }
   .ultwrapper{
@@ -127,8 +138,6 @@ h2 {
     align-content: center;
     margin: 5px;
     border-radius: 5%;
-    width: 100vw;
-    height: 100vh;
     text-align: center;
   }
   .back{
