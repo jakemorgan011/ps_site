@@ -1,9 +1,8 @@
 // heres the deal:
 // we can either make a bunch of different scripts the lazy way and have this avaible for every div
 // OR you can do it right and make it dynamic.
-const window_height = window.screen.height;
-const window_width = window.screen.width;
-
+const total_screen_height = screen.height;
+const total_screen_width = screen.width;
 class SizeAnimator {
     constructor(containerSelector, options = {}) {
         this.container = document.querySelector(containerSelector);
@@ -97,9 +96,14 @@ class colorWheel {
 }
 
 //
-const MAX_HEIGHT = window_height / 4;
-const MAX_WIDTH = window_width / 5;
-
+let divisor;
+if(total_screen_height < 1000){
+    divisor = 4;
+}else{
+   divisor = 2;
+}
+const MAX_HEIGHT = total_screen_height / divisor;
+const MAX_WIDTH = total_screen_width / 5;
 // independent objects inside the flexbox
 document.addEventListener('DOMContentLoaded', () => {
     // Create animator instance
@@ -112,13 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
         interval: 75, // Update every 500ms
         pxRate:0.03
     });
+    console.log(divisor);
     animator.start();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   // grab the element id via #
     const animator2 = new SizeAnimator('#project_directory',{
-        minWidth: 145, // default 145 for "project_directory"
+        minWidth: 175, // default 145 for "project_directory"
         maxWidth: MAX_WIDTH, //default 200
         minHeight: 60, // default 60
         maxHeight: MAX_HEIGHT, // default 200

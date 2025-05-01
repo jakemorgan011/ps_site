@@ -26,6 +26,7 @@
 }
 h1 {
    margin: 5px;
+    font-size: 5em;
 }
 h2 {
     font-size: large;
@@ -71,6 +72,19 @@ h2 {
 }
 /* makes it the top left style */
 /* on mobile however something goes wrong with all the sizing. */
+/* because of the way i am doing constantly resizing elements...
+i need to fake media queries inside js... never doing it again.
+ */
+@media (max-width: 600px){
+    .ps_container{
+        height: 20vh;
+    }
+   .links{
+       *{
+           font-size: xxx-large;
+       }
+   }
+}
 @media (max-width: 1023px){
     .breaker{
         height: 0;
@@ -102,8 +116,10 @@ h2 {
 
 /* for fullsize */
 @media (min-width: 1024px){
-    h1{
-        font-size: xxx-large;
+    .ps_container{
+        h1{
+            font-size: 5em;
+        }
     }
     .jake{
         h2{
