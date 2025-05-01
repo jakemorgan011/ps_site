@@ -75,7 +75,11 @@ h2 {
 /* because of the way i am doing constantly resizing elements...
 i need to fake media queries inside js... never doing it again.
  */
-@media (max-width: 600px){
+@media screen and (max-width: 600px)and(max-height: 900px){
+    .breaker{
+        height: 15vh;
+        width: 100%;
+    }
     .ps_container{
         height: 20vh;
     }

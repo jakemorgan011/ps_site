@@ -100,7 +100,7 @@ let divisor;
 if(total_screen_height < 1000){
     divisor = 4;
 }else{
-   divisor = 2;
+   divisor = 0.5;
 }
 const MAX_HEIGHT = total_screen_height / divisor;
 const MAX_WIDTH = total_screen_width / 5;
