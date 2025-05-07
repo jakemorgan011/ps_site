@@ -97,13 +97,18 @@ class colorWheel {
 
 //
 let divisor;
+let w_divisor;
 if(total_screen_height < 1000){
     divisor = 4;
+    w_divisor = 5;
 }else{
-   divisor = 0.5;
+   divisor = 0.65;
+   w_divisor = 0.55;
 }
 const MAX_HEIGHT = total_screen_height / divisor;
 const MAX_WIDTH = total_screen_width / 5;
+console.log(MAX_HEIGHT);
+console.log(MAX_WIDTH);
 // independent objects inside the flexbox
 document.addEventListener('DOMContentLoaded', () => {
     // Create animator instance
