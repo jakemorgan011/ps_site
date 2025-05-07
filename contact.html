@@ -7,7 +7,70 @@
 </head>
 <body>
 <h1>Get in Contact</h1>
+<div class="back">
+    <a href="index.html">back</a>
+</div>
 <div class="breaker"></div>
-<p>test test</p>
+    <form id="message-form">
+        <style>
+            @media(max-width: 767px) {
+                textarea{
+                    cols: 40;
+                    rows: 40;
+                }
+            }
+            @media(min-width: 768px) {
+                textarea {
+                    cols: 40;
+                    rows: 40;
+                }
+            }
+        </style>
+        <textarea name="message" id="message-input" cols="50" rows="20" placeholder="leave a message and your name/contact!"></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <script>
+        document.getElementById('message-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            sendToDiscord();
+        });
+
+        document.getElementById('message-input').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendToDiscord();
+            }
+        });
+
+        function sendToDiscord() {
+            const message = document.getElementById('message-input').value.trim();
+            if (!message) return;
+
+            // Replace with your actual Discord webhook URL
+            const webhookUrl = 'https://discord.com/api/webhooks/1369440267962421339/At13y7PVyBJELW-J_seDLFjVcE5c4YOt1C0Tfcs_vfXv6x1Dv3vpM_cXi_P7VD8bDmyj';
+
+            const payload = {
+                content: message,
+                username: "ps_site_message", // You can customize this
+                avatar_url: "" // Optional: URL to an avatar image
+            };
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    document.getElementById('message-input').value = '';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
 </body>
 </html>
